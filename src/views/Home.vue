@@ -6,7 +6,7 @@
   </div>
   <div class="tt-home-content">
     <div class="home-content-left">
-      <!-- <Navigator></Navigator> -->
+      <Navigator></Navigator>
     </div>
     <div class="home-content-middle"></div>
     <div class="home-content-right"></div>
@@ -18,10 +18,13 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
+import Navigator from '../components/Navigator'
 
 export default {
 //import引入的组件需要注入到对象中才能使用
-components: {},
+components: {
+  Navigator
+},
 data() {
 //这里存放数据
 return {
@@ -64,17 +67,20 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
     }
 }
 
-// .tt-home-content {
-//   .home-content-left {
+.tt-home-content {
+  width: 80vw;
+  margin: 5px auto;
+  display: flex;
+  .home-content-left {
+    flex: 1;
+  }
 
-//   }
+  .home-content-middle {
+    flex: 3;
+  }
 
-//   .home-content-middle {
-
-//   }
-
-//   .home-content-right {
-
-//   }
-// }
+  .home-content-right {
+    flex: 2;
+  }
+}
 </style>
